@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng</title>
+    <script>
+        function onClick(){
+            let so_a = parseFloat(document.getElementById('so_a').value);
+            let so_b = parseFloat(document.getElementById('so_b').value);
+            let tong = so_a + so_b;
+            document.getElementById('tong').innerHTML = tong;
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="">
+        <table>
+            <tr>
+                <td><label for="so_a">Nhập số a:</label></td>
+                <td>
+                    <input type="number" name="" id="so_a">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="so_b">Nhập số b:</label></td>
+                <td>
+                    <input type="number" name="" id="so_b">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tong">Tổng a và b là :</label></td>
+                <td><span id="tong"></span></td>
+            </tr>
+        </table>
+    </form>
+    <button onclick="onClick();">Tính tổng</button>
+</body>
+</html>
+

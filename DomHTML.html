@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM element</title>
+</head>
+<body>
+    <h1 id="tieu-de">Dom Element</h1>
+    <button onclick="onClick();">Click here</button>
+    <script>
+        //Tương tác thông qua id
+        function onClick(){
+            //Lấy giá trị trong h1 có id= tieu-de
+           let gt = document.getElementById("tieu-de").innerHTML;
+           alert(gt); 
+           //Tương tác thông qua tên thẻ
+           document.getElementsByTagName('h1')[0].style.color = 'red';
+        }
+    </script>
+</body>
+</html>

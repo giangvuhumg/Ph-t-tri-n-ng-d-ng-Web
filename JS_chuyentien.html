@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function thaydoi(){
+            let opt = document.getElementById('ngoaite').value;
+            document.getElementById('tygia').innerHTML = opt;
+        }
+        function Tinh_tong(){
+            let sotien = document.getElementById('sotien').value;
+            let opt = document.getElementById('ngoaite').value;
+            document.getElementById('ketqua').innerHTML = sotien*opt;
+        }    
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        Nhập số tiền : <input type="number" name="" id="sotien"><br>
+        Chọn ngoại tệ : 
+        <select name="" id="ngoaite" onchange="thaydoi();">
+            <option value="26000">AUD</option>
+            <option value="23000">USD</option>
+            <option value="13000">HKD</option>
+        </select>
+        Tỷ giá : <span id="tygia"></span><br>
+        Quy đổi ra VNĐ : <span id="ketqua"></span><br>
+        <input type="button" value="Chuyển đổi" id="chuyenDoi" onclick="Tinh_tong();">
+    </form>
+</body>
+</html>

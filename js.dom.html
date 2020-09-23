@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM HTML</title>
+</head>
+<body>
+    <h1>DOM Javascript</h1>
+    <section id="wrapper">
+        <div class="item">
+            <h2>Tiều đề h2</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum quasi non commodi quaerat ipsum, voluptates eaque 
+                libero corporis quod similique sapiente obcaecati laudantium ullam, quia nobis voluptatem enim quas vel!</p>
+        </div>
+        <div class="item">
+            <h2>Tiêu đề H2</h2>
+            <p>Nọi dung 2</p>
+        </div>
+    </section>
+    <section id="frm">
+        <div class="form-group">
+            <label for="user">Tài khoản:</label>
+            <input type="text" name="user" id="user" onkeyup="checkUser();">
+            <span id="mes-user" class="err">(*)</span>
+        </div>
+        <div class="form-group">
+            <label for="pass">Mật khẩu:</label>
+            <input type="password" name="pass" id="pass">
+            <span id="mes-pass" class="err">(*)</span>
+        </div>
+        <div class="form-control">
+            <input type="button" value="Đăng nhập" name ="btLogin" onclick="check()">
+            <input type="button" value="Làm lại" name="btnReset">
+        </div>
+    </section>
+    <script type="text/javascript">
+        //Xử lý với dom element
+        //Tương tác thông qua tên thẻ HTML
+        var noidung1 = document.getElementsByTagName("h1");
+        nd = noidung1[0].innerHTML;
+        console.log(nd);
+        noidung1[0].style.color = 'red';
+        noidung1[0].style.backgroundColor = 'yellow';
+
+        // Tương tác thông qua thuộc tính id của phần tử HTML
+        var secID = document.getElementById('wrapper');
+        secID.style.backgroundColor = "#ccc";
+
+        function check(){
+            //kiểm tra tài khoản,mật khẩu ko đc trống
+            let tk = document.getElementById('user').values;
+            let mk = document.getElementById('pass').values;
+            if(tk==''){
+                document.getElementById('mes-user').innerHTML='Bạn chưa nhập tài khoản';
+                document.getElementById('mes-user').style.color='red';
+            }else{
+                document.getElementById('mes-user').innerHTML='OK';
+                document.getElementById('mes-user').style.color='green';
+            }
+            if(mk==''){
+                document.getElementById('mes-pass').innerHTML='Bạn chưa nhập mật khẩu';
+                document.getElementById('mes-pass').style.color='red';
+            }else{
+                document.getElementById('mes-pass').innerHTML='OK';
+                document.getElementById('mes-pass').style.color='green';
+            }
+        }
+        //hàm check user ko để trống sử dụng trong sự kiên onkeyup, onkeydown
+        function checkUser(){
+                let tk = document.getElementById('user').values; 
+                if(tk==''){
+                document.getElementById('mes-user').innerHTML='Bạn chưa nhập tài khoản';
+                document.getElementById('mes-user').style.color='red';
+                }else{
+                document.getElementById('mes-user').innerHTML='OK';
+                document.getElementById('mes-user').style.color='green';
+            }
+            }
+    </script>
+</body>
+</html>

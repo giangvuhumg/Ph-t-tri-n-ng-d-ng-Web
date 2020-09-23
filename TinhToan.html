@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Toán</title>
+    <script>
+        function pheptoan(){
+            let so_a = document.getElementById('so_a').value;
+            let so_b = document.getElementById('so_b').value;
+            let operator = document.getElementById('toantu').value;
+            let ketqua = 0;
+            //Có thể dùng if else
+            switch(operator){
+                case "+":
+                    ketqua = parseInt(so_a) +  parseInt(so_b);
+                    break;
+                case "-":
+                    ketqua = parseInt(so_a) - parseInt(so_b);
+                    break;  
+                case "*":
+                    ketqua = parseInt(so_a) * parseInt(so_b);
+                    break;
+                case "/":
+                    ketqua = parseInt(so_a) / parseInt(so_b);
+                    break;
+            }          
+            let result = document.getElementById('ketqua').value = ketqua;
+            document.getElementById('ketqua').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập số a :</td>
+            <td><input type="number" name="so_a" id="so_a"></td>
+        </tr>
+        <tr>
+            <td>Toán tử :</td>
+            <td>
+                <select name="" id="toantu">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Nhập số b :</td>
+            <td><input type="number" name="so_b" id="so_b"> </td>     
+        </tr>
+        <tr>
+            <td>Kết quả :</td>
+            <td><span id="ketqua"></span></td>
+        </tr>
+    </table>
+    <input type="button" value="Thực hiện" onclick="pheptoan()">
+</body>
+</html>
