@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy doi tien</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            document.querySelector('#chuyendoi').disabled = true;
+            document.querySelector('#tien').onkeyup = function(){
+                if(document.querySelector('#tien').value.length > 0){
+                    document.querySelector('#chuyendoi').disabled = false;
+                }
+                else{
+                    document.querySelector('#chuyendoi').disabled = true;
+                }    
+            }
+            document.querySelector("#tygia").innerHTML = 17000;
+            document.querySelector('#ngoaite').onchange = function()
+			{
+				document.querySelector('#tygia').innerHTML = this.value;
+			};
+            function ketqua() {
+                let opt = document.querySelector('#ngoaite').value;
+                let sotien = document.querySelector('#tien').value;
+                let obj = document.querySelector('#ngoaite').value;
+                if (document.querySelector('#doitien').checked == false) {
+                    document.querySelector('#ketqua').innerHTML = opt * sotien;
+                }else{
+                    document.querySelector('#ketqua').innerHTML = sotien / obj;
+                    }
+            }
+            document.querySelector('#chuyendoi').onclick = ketqua;
+        })
+    </script>
+</head>
+<body>
+    <form id='form' method="post">
+        <label>Nhập số tiền: </label><input type="number" id="tien" autofocus placeholder=""><br/>
+        <label>Chọn ngoại tệ: </label>
+        <select name="" id="ngoaite">
+            <option value="17000">AUD</option>
+            <option value="22000">USD</option>
+            <option value="13000">HKD</option>
+        </select><br/>
+        <label>Tỷ giá: </label> <span id="tygia"></span><br/>
+        <input type="checkbox" name="" id="doitien">
+        <br>
+        <label>Quy đổi ra VND:</label> <span id="ketqua"></span><br>
+        <input type="button" id='chuyendoi' value="Quy Đổi">
+</form>
+</body>
+</html>
